@@ -12,7 +12,6 @@ export default function EditProfile() {
     function handleIsChangingPassword() {
         setIsChangingPassword(true)
     }
-
     return (
         <>
             <Container maxWidth={false} sx={{
@@ -62,9 +61,8 @@ export default function EditProfile() {
                                     </Grid>
                                 </>
                         }
-
                         <Grid item xs={12} sx={{display: "flex"}}>
-                            <Button variant="contained" size="large" sx={{marginLeft: "auto"}} form="test">Save</Button>
+                            <Button variant="contained" size="large" sx={{marginLeft: "auto"}} type="submit">Save</Button>
                         </Grid>
                     </Grid>
                 </Container>
