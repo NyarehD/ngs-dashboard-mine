@@ -26,10 +26,12 @@ export default function EditProfileInput({label, isDisabled = false}) {
                 <Grid item xs={3} sx={{display: "flex", alignItems: "center", justifyContent: "flex-end"}}>
                     <Typography variant="h6" sx={{margin: "0 20px", textTransform: "capitalize"}}>{label}</Typography>
                 </Grid>
-                <Grid item xs={3} sm={6} sx={{justifySelf: "center"}}>
+                <Grid item sm={6}  sx={{justifySelf: "center"}}>
                     {
                         !isDisabled ?
-                            <CustomTextFiled variant="outlined" name={label}/>
+                            <>
+                            <CustomTextFiled variant="outlined" name={label} value={input}/>
+                           </>
                             :
                             <FormControl defaultValue={"admin"} sx={{width: "100%"}} disabled>
                                 <Select

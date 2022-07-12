@@ -17,8 +17,8 @@ export default function EditProfile() {
         <>
             <Container maxWidth={false} sx={{
                 minHeight: "100vh",
-                margin: "40px 0"
-            }}>
+                margin: "40px 0",
+            }} className={editProfileStyle.container}>
                 <Container maxWidth={false} sx={{
                     minHeight: "auto",
                     padding: "10px",
@@ -64,7 +64,7 @@ export default function EditProfile() {
                         }
 
                         <Grid item xs={12} sx={{display: "flex"}}>
-                            <Button variant="contained" size="large" sx={{marginLeft: "auto"}}>Save</Button>
+                            <Button variant="contained" size="large" sx={{marginLeft: "auto"}} form="test">Save</Button>
                         </Grid>
                     </Grid>
                 </Container>

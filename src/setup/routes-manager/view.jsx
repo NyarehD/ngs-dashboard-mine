@@ -13,19 +13,21 @@ import EditUser from "../../app/pages/user/edit-user/edit-user";
 
 // Profile
 import EditProfile from "../../app/pages/user/edit-profile/EditProfile";
+import ChangePassword from "../../app/pages/user/edit-profile/ChangePassword";
 
 function View() {
-  return (
-    <Routes>
-        <Route index element={<UserList />} ></Route>
-        <Route path='/add-new-user' element={<AddNewUser />} ></Route>
-        <Route path='/edit-user' element={<EditUser />} ></Route>
-        <Route path='/post-list' element={<PostList />} ></Route>
-        <Route path='/add-new-post' element={<AddPost />} ></Route>
-        <Route path='/edit-post' element={<EditPost />} ></Route>
-        <Route path='/edit-profile' element={<EditProfile />}></Route>
-    </Routes>
-  )
+    return (
+        <Routes>
+            <Route index element={<UserList/>}></Route>
+            <Route path='/add-new-user' element={<AddNewUser/>}></Route>
+            <Route path='/edit-user' element={<EditUser/>}></Route>
+            <Route path='/post-list' element={<PostList/>}></Route>
+            <Route path='/add-new-post' element={<AddPost/>}></Route>
+            <Route path='/edit-post' element={<EditPost/>}></Route>
+            <Route path='/edit-profile' element={<EditProfile/>}></Route>
+            <Route path='/change-password' element={<ChangePassword/>}></Route>
+        </Routes>
+    )
 }
 
 export default View
