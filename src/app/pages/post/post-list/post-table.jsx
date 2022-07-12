@@ -1,29 +1,16 @@
-import {
-    faArrowLeft,
-    faArrowRight,
-    faSearch,
-  } from "@fortawesome/free-solid-svg-icons";
-  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-  import {
-    Button,
-    Divider,
-    Grid,
-    OutlinedInput,
-    Pagination,
-    PaginationItem,
-    Stack,
-    Typography,
-  } from "@mui/material";
-  import React from "react";
-  import PostsTable from "./posts-table";
-  
-  const rightArrow = () => {
+import {faArrowLeft, faArrowRight, faSearch,} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Button, Divider, Grid, OutlinedInput, Pagination, PaginationItem, Stack, Typography,} from "@mui/material";
+import React from "react";
+import PostsTable from "./posts-table";
+
+const rightArrow = () => {
     return <FontAwesomeIcon icon={faArrowRight} />;
   };
   const leftArrow = () => {
     return <FontAwesomeIcon icon={faArrowLeft} />;
   };
-  
+
   const UserTable = () => {
     return (
       <Grid
@@ -104,6 +91,5 @@ import {
       </Grid>
     );
   };
-  
+
   export default UserTable;
-  
