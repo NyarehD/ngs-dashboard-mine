@@ -75,6 +75,17 @@ const rows = [
         personalExp: "Pellentesque lorem mauris, vehicul"
     },
 ]
+// Table Header
+const TableHeader = columns.map(column => (
+    <TableCell component="th" scope="row" key={column.id}
+               sx={{
+                   fontWeight: "bold",
+                   fontSize: "1rem",
+                   // To make header text center for Image
+                   textAlign: (column.id === "image") ? "center" : "left",
+                   minWidth: column.minWidth
+               }}>{column.label}</TableCell>
+))
 export default function Team() {
 
     return (
@@ -88,25 +99,18 @@ export default function Team() {
             }}
         >
             <Typography variant="h4" sx={{margin: "5rem 0 1rem"}}>Team Management</Typography>
-            <TableContainer>
+            <TableContainer sx={{marginTop: "30px"}}>
                 <Table sx={{maxWidth: "500px"}}>
                     <TableHead>
                         <TableRow>
-                            {columns.map(column => (
-                                <TableCell component="th" scope="row" key={column.id}
-                                           sx={{
-                                               fontWeight: "bold",
-                                               fontSize: "1rem",
-                                               minWidth: column.minWidth
-                                           }}>{column.label}</TableCell>
-                            ))}
+                            {TableHeader}
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {rows.map(row => (
                             <TableRow sx={{maxHeight: "100px"}} key={row.id}>
                                 <TableCell scope="row">{row.id}</TableCell>
-                                <TableCell scope="row" sx={{display:"flex"}}>
+                                <TableCell scope="row" sx={{display: "flex"}}>
                                     <img src={row.image} alt="Personal"
                                          style={{height: "110px", objectFit: "contain", margin: "0 auto"}}/>
                                 </TableCell>
