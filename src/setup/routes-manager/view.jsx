@@ -16,6 +16,10 @@ import UserProfile from "../../app/pages/user-profile/EditProfile";
 import ChangePassword from "../../app/pages/user-profile/ChangePassword";
 import Home from "../../core/components/home/home";
 
+// Team
+import Team from "../../app/pages/team/Team"
+import TeamAdd from "../../app/pages/team/TeamAdd";
+import TeamEdit from "../../app/pages/team/TeamEdit";
 function View() {
   return (
     <Routes>
@@ -35,9 +39,14 @@ function View() {
         <Route path="edit/:id" element={<EditBlog />}></Route>
       </Route>
 
-      {/* Porfile */}
+      {/* Profile */}
       <Route path="/user-profile" element={<UserProfile />}></Route>
       <Route path="/change-password" element={<ChangePassword />}></Route>
+        <Route path="/team">
+            <Route index element={<Team/>}></Route>
+            <Route path="add" element={<TeamAdd/>}></Route>
+            <Route path="edit" element={<TeamEdit/>}></Route>
+        </Route>
     </Routes>
   );
 }
