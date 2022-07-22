@@ -56,3 +56,52 @@ $blueFontColor: #0780Ef
   .paginationIcon
     font-size: 2rem
     color: $blueFontColor
+
+// For Edit Team Page
+.addTeamContainer
+  @extend .teamContainer
+  height: 100%
+  padding: 5rem
+
+  .back
+    font-size: 2rem
+    color: $blueFontColor
+
+  .teamForm
+    .teamImgContainer
+      display: flex
+      position: relative
+      justify-content: center
+
+      div
+        position: relative
+        box-sizing: unset
+        transition: 0.3s
+
+        .teamImg
+          width: 250px
+          height: 100%
+        .overlay
+          position: absolute
+          inset: 0
+          width: 100%
+          height: 100%
+          background-color: #0780ef54
+          opacity: 0
+
+          .imgViewIcon
+            position: absolute
+            color: white
+            font-size: 35px
+            top: 50%
+            right: 30%
+            transform: translate(-50%, -50%)
+            text-align: center
+
+        &:hover
+          .overlay
+            opacity: 1
+
+.inputsContainer
+  .inputsWrapper
+    margin-top: 1rem
