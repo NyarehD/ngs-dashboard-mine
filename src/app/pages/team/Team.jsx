@@ -207,12 +207,12 @@ export default function Team() {
             </TableContainer>
             <Grid container justifyContent="space-between" className={teamStyle.pagination}>
                 <Grid item md={1}>
-                    <IconButton aria-label="delete">
+                    <IconButton aria-label="Previous pagination">
                         <FontAwesomeIcon icon={faCircleChevronLeft} className={teamStyle.paginationIcon}/>
                     </IconButton>
                 </Grid>
                 <Grid item md={1}>
-                    <IconButton aria-label="delete">
+                    <IconButton aria-label="Next pagination">
                         <FontAwesomeIcon icon={faCircleChevronRight} className={teamStyle.paginationIcon}/>
                     </IconButton>
                 </Grid>
