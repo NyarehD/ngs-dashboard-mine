@@ -1,5 +1,27 @@
-import React from "react"
-import {Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography} from "@mui/material";
+import React, {useState} from "react"
+import {
+    Breadcrumbs, Button,
+    Container, FormControl, Grid, IconButton, Select,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    Typography,
+} from "@mui/material";
+import teamStyle from "./team.module.sass"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {
+    faAngleRight,
+    faCircleChevronLeft,
+    faCircleChevronRight,
+    faPencil,
+    faPlus,
+    faTrash
+} from "@fortawesome/free-solid-svg-icons"
+import {Link} from "react-router-dom"
+import MenuItem from "@mui/material/MenuItem";
 
 const columns = [
     {
@@ -8,29 +30,9 @@ const columns = [
         minWidth: "50px"
     },
     {
-        id: 'image',
-        label: "Image",
-        minWidth: "150px"
-    },
-    {
         id: 'name',
         label: "Name",
-        minWidth: "80px"
-    },
-    {
-        id: 'occupation',
-        label: "Occupation",
-        minWidth: "120px"
-    },
-    {
-        id: "experience",
-        label: "Experience",
-        minWidth: "50px"
-    },
-    {
-        id: 'phone',
-        label: "Phone",
-        minWidth: "130px"
+        minWidth: '130px'
     },
     {
         id: 'email',
@@ -38,9 +40,24 @@ const columns = [
         minWidth: "210px"
     },
     {
-        id: 'personalExp',
-        label: "Personal Experience",
-        minWidth: "300px"
+        id: 'occupation',
+        label: "Occupation",
+        minWidth: "150px"
+    },
+    {
+        id: "phone",
+        label: "Phone",
+        minWidth: "120px"
+    },
+    {
+        id: "Info",
+        label: "Info",
+        minWidth: "50px"
+    },
+    {
+        id: "actions",
+        label: "Actions",
+        minWidth: "120px"
     }
 ]
 const rows = [
@@ -74,6 +91,26 @@ const rows = [
         email: "deanwhales@MaxiCom.com",
         personalExp: "Pellentesque lorem mauris, vehicul"
     },
+    {
+        id: 4,
+        image: "./04.jpg",
+        name: "Dean Whales",
+        occupation: "Senior Executive",
+        experience: 9,
+        phone: "012-985-624",
+        email: "deanwhales@MaxiCom.com",
+        personalExp: "Pellentesque lorem mauris, vehicul"
+    },
+    {
+        id: 5,
+        image: "./04.jpg",
+        name: "Dean Whales",
+        occupation: "Senior Executive",
+        experience: 9,
+        phone: "012-985-624",
+        email: "deanwhales@MaxiCom.com",
+        personalExp: "Pellentesque lorem mauris, vehicul"
+    },
 ]
 // Table Header
 const TableHeader = columns.map(column => (
@@ -81,51 +118,105 @@ const TableHeader = columns.map(column => (
                sx={{
                    fontWeight: "bold",
                    fontSize: "1rem",
-                   // To make header text center for Image
-                   textAlign: (column.id === "image") ? "center" : "left",
-                   minWidth: column.minWidth
+                   minWidth: column.minWidth,
                }}>{column.label}</TableCell>
 ))
+const breadcrumbs = [
+    <Link to="/" key="1" className={teamStyle.breadcrumbLink}>
+        Home
+    </Link>,
+    <Typography key="2" className={`${teamStyle.breadcrumbLink} ${teamStyle.inActive}`}>
+        Team
+    </Typography>,
+]
 export default function Team() {
+    const [teamSelect, setTeamSelect] = useState("mobile")
+
+    function handleTeamChange(e) {
+        setTeamSelect(e.target.value)
+    }
 
     return (
-        <Container
-            maxWidth={false}
-            sx={{
-                paddingTop: "20px",
-                paddingBottom: "20px",
-                minHeight: "100vh",
-                backgroundColor: 'rgb(205, 220, 236)'
-            }}
-        >
-            <Typography variant="h4" sx={{margin: "5rem 0 1rem"}}>Team Management</Typography>
-            <TableContainer sx={{marginTop: "30px"}}>
-                <Table sx={{maxWidth: "500px"}}>
+        <Container maxWidth={false} className={teamStyle.teamContainer}>
+
+            <Grid container justifyContent="space-between">
+                <Grid item sm={4}>
+                    <Breadcrumbs
+                        separator={<FontAwesomeIcon icon={faAngleRight}/>}
+                        aria-label="breadcrumb" className={teamStyle.breadcrumb}>
+                        {breadcrumbs}
+                    </Breadcrumbs>
+                </Grid>
+                <Grid item container md={5} justifyContent="space-between">
+                    <Grid item sm={8}>
+                        <FormControl fullWidth>
+                            <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                value={teamSelect}
+                                onChange={handleTeamChange}
+                                className={teamStyle.teamSelect}
+                            >
+                                <MenuItem value="mobile" onClick={handleTeamChange}
+                                          className={teamStyle.teamSelectItem}>Mobile</MenuItem>
+                                <MenuItem value="backend" onClick={handleTeamChange}
+                                          className={teamStyle.teamSelectItem}>Backend</MenuItem>
+                                <MenuItem value="database" onClick={handleTeamChange}
+                                          className={teamStyle.teamSelectItem}>Database</MenuItem>
+                                <MenuItem value="website" onClick={handleTeamChange}
+                                          className={teamStyle.teamSelectItem}>Website</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Grid>
+                    <Grid item sm={3}>
+                        <Button variant="contained" className={teamStyle.addTeamIcon}><FontAwesomeIcon
+                            icon={faPlus}/></Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <TableContainer className={teamStyle.tableContainer}>
+                <Table className={teamStyle.teamTable}>
                     <TableHead>
                         <TableRow>
                             {TableHeader}
                         </TableRow>
                     </TableHead>
-                    <TableBody>
+                    <TableBody className={teamStyle.tableBody}>
                         {rows.map(row => (
                             <TableRow sx={{maxHeight: "100px"}} key={row.id}>
                                 <TableCell scope="row">{row.id}</TableCell>
-                                <TableCell scope="row" sx={{display: "flex"}}>
-                                    <img src={row.image} alt="Personal"
-                                         style={{height: "110px", objectFit: "contain", margin: "0 auto"}}/>
-                                </TableCell>
                                 <TableCell scope="row">{row.name}</TableCell>
-                                <TableCell scope="row">{row.occupation}</TableCell>
-                                <TableCell scope="row">{row.experience} years</TableCell>
-                                <TableCell scope="row">{row.phone}</TableCell>
                                 <TableCell scope="row">{row.email}</TableCell>
-                                <TableCell
-                                    scope="row">{row.personalExp.length >= 50 ? row.personalExp.slice(1, 150) + "..." : row.personalExp}</TableCell>
+                                <TableCell scope="row">{row.occupation}</TableCell>
+                                <TableCell scope="row">{row.phone}</TableCell>
+                                <TableCell scope="row" className={teamStyle.view}>
+                                    <Link to="/team/edit">View</Link>
+                                </TableCell>
+                                <TableCell scope="row" className={teamStyle.actions}>
+                                    <IconButton aria-label="delete">
+                                        <FontAwesomeIcon icon={faPencil} className={teamStyle.edit}/>
+                                    </IconButton>
+                                    <IconButton>
+                                        <FontAwesomeIcon icon={faTrash} className={teamStyle.delete}/>
+                                    </IconButton>
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
                 </Table>
             </TableContainer>
+            <Grid container justifyContent="space-between" className={teamStyle.pagination}>
+                <Grid item md={1}>
+                    <IconButton aria-label="delete">
+                        <FontAwesomeIcon icon={faCircleChevronLeft} className={teamStyle.paginationIcon}/>
+                    </IconButton>
+                </Grid>
+                <Grid item md={1}>
+                    <IconButton aria-label="delete">
+                        <FontAwesomeIcon icon={faCircleChevronRight} className={teamStyle.paginationIcon}/>
+                    </IconButton>
+                </Grid>
+            </Grid>
         </Container>
     );
 }

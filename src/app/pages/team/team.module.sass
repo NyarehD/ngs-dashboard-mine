@@ -1,0 +1,58 @@
+// Colors
+$blueFontColor: #0780Ef
+.teamContainer
+  padding: 5rem 20px 0
+  background-color: rgb(205, 220, 236)
+  height: calc(100vh)
+
+.breadcrumb
+  margin-top: 1rem !important
+
+  .breadcrumbLink
+    text-decoration: none
+    color: #000000
+    transition: 0.3s
+    font-size: 1.5rem
+
+    &:hover
+      text-decoration: underline
+      color: #0000EE
+
+    &.inActive:hover
+      text-decoration: none
+
+.teamSelectItem
+  text-transform: capitalize
+
+.addTeamIcon
+  height: 100%
+  font-size: 2rem
+
+.tableContainer
+  margin-top: 30px
+
+  .teamTable
+    max-width: 500px
+
+    .tableBody
+      .view
+        a
+          color: $blueFontColor
+          text-decoration: none
+
+        &:hover
+          text-decoration: underline
+
+      .actions
+        .edit
+          color: $blueFontColor
+          font-size: 1.2rem
+
+        .delete
+          @extend .edit
+          color: #D80F0F
+
+.pagination
+  .paginationIcon
+    font-size: 2rem
+    color: $blueFontColor
