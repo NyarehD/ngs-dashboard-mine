@@ -1,28 +1,31 @@
-import React, { useState } from "react";
+import React, {createContext, useState} from "react";
 import View from "./setup/routes-manager/view";
 import Header from "./core/components/header";
 import Style from "./app.module.sass";
-import { Box, Container } from "@mui/material";
-import sidebar from "./core/components/sidebar/sidebar.module.sass";
-import styled from "@emotion/styled";
+import {Box} from "@mui/material";
 
-const DynamicContainer = styled(Box)({});
+// For dark theme
+export const Context = createContext({mode: 'light'})
 
 function App() {
-  const [wide, setWide] = useState(false);
-  return (
-    <div className={`{App} {Style.app}`}>
-      <Header className={Style.header} wide={wide} setWide={setWide} />
-      <Box
-        component="section"
-        sx={{
-          marginLeft: { md: wide ? "64px" : "240px", sm: 0 },
-          transition: "all .3s linear",
-        }}
-      >
-        <View />
-      </Box>
-    </div>
-  );
+    const [wide, setWide] = useState(false);
+    const [darkMode, setDarkMode] = useState(Context._currentValue)
+    return (
+        <Context.Provider value={[darkMode, setDarkMode]}>
+            <div className={`{App} {Style.app}`}>
+                <Header className={Style.header} wide={wide} setWide={setWide}/>
+                <Box
+                    component="section"
+                    sx={{
+                        marginLeft: {md: wide ? "64px" : "240px", sm: 0},
+                        transition: "all .3s linear",
+                    }}
+                >
+                    <View/>
+                </Box>
+            </div>
+        </Context.Provider>
+    );
 }
+
 export default App;
