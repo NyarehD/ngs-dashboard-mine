@@ -1,10 +1,11 @@
 // Colors
 $blueFontColor: #0780Ef
 
-.container 
+.container
   background-color: rgb(205, 220, 236)
   width: 100vw
   height: 100vh
+
 .teamContainer
   max-width: none !important
   padding: 5rem 20px 0
@@ -43,18 +44,21 @@ $blueFontColor: #0780Ef
 
 .addTeamIcon
   min-width: 50px !important
-  width: 50px 
+  width: 50px
   height: 50px
-  padding: 0 px !important
+  padding: 0 !important
   font-size: 2rem
 
 .tableContainer
   background-color: rgb(205, 220, 236)
   margin-top: 30px
   width: 100%
+
   .teamTable
     .tableBody
       .view
+        cursor: pointer
+
         a
           color: $blueFontColor
           text-decoration: none
@@ -82,7 +86,7 @@ $blueFontColor: #0780Ef
 .responsiveText
   font-size: 13px
 
-.disabled 
+.disabled
   fieldset
     border: none
     background: #ffffff50
@@ -110,6 +114,7 @@ $blueFontColor: #0780Ef
         .teamImg
           width: 250px
           height: 100%
+
         .overlay
           position: absolute
           inset: 0
@@ -142,7 +147,61 @@ $blueFontColor: #0780Ef
 @media only screen and (min-width: 992px)
   .responsiveText
     font-size: 25px
-    input 
+
+    input
       font-size: 20px
+
     textarea
       font-size: 20px
+// Dark mode
+$darkFontColor: #d8d8d8
+$darkBackgroundColor: #3e3e3e
+$teamSelectColorDark: #bebebe
+$teamSelectItemColorDark: #424242
+
+.darkMode
+
+  &.teamContainer
+    background-color: $darkBackgroundColor
+
+    .breadcrumb
+      .breadcrumbLink
+        color: $darkFontColor
+
+      svg
+        color: $darkFontColor
+
+
+    .tableContainer
+      background-color: $darkBackgroundColor
+      color: $darkFontColor
+
+      .teamTable
+        thead
+          th
+            color: $darkFontColor
+
+        .tableBody
+          tr
+            td
+              color: $darkFontColor
+              border-bottom: none
+
+      .pagination
+        ul
+          li
+            button
+              color: $darkFontColor
+.deleteTeamDark
+  @extend .deleteTeam
+  background-color: $teamSelectItemColorDark !important
+  border-radius: 0 !important
+  color: $darkFontColor !important
+  &:hover
+    background-color: #2e2e2e
+
+.teamSelectItemDark
+  @extend .teamSelectItem
+  background-color: $teamSelectItemColorDark !important
+  color: $darkFontColor !important
+  border-radius: 0 !important
