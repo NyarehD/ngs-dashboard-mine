@@ -1,14 +1,15 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Button, Container, Grid, IconButton, TextField, Typography, Select, FormControl, MenuItem} from "@mui/material";
 import teamStyle from "./team.module.sass"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAdd, faArrowLeft} from "@fortawesome/free-solid-svg-icons";
-import { useLocation, useNavigate } from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import api from '../../../mockdatabase/database';
+import {Context} from "../../../App";
 
 export default function AddTeam() {
     const navigate = useNavigate()
-    const {state:{teams}} = useLocation()
+    const {state: {teams}} = useLocation()
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [experience, setExperience] = useState("")
@@ -16,22 +17,27 @@ export default function AddTeam() {
     const [team, setTeam] = useState(teams[0].teamname)
     const [occupation, setOccupation] = useState("")
     const [personalExperience, setPersonalExperience] = useState("")
-    function addMember(){
-        api.post('/developer-team-members',{"image": "./logo512.png",
-        "name": name,
-        "occupation": occupation,
-        "team": team,
-        "experience": experience,
-        "phone": phoneNumber,
-        "email": email,
-        "personalExp":personalExperience})
+    const [darkMode] = useContext(Context)
+
+    function addMember() {
+        api.post('/developer-team-members', {
+            "image": "./logo512.png",
+            "name": name,
+            "occupation": occupation,
+            "team": team,
+            "experience": experience,
+            "phone": phoneNumber,
+            "email": email,
+            "personalExp": personalExperience
+        })
         navigate('/team')
     }
+
     return (
-        <Container className={teamStyle.addTeamContainer}>
+        <Container className={`${teamStyle.addTeamContainer} ${darkMode.mode === "dark" && teamStyle.darkMode}`}>
             <Grid container>
                 <Grid item>
-                    <IconButton aria-label="back"  onClick={_ => navigate('/team', {replace:true})}>
+                    <IconButton aria-label="back" onClick={_ => navigate('/team', {replace: true})}>
                         <FontAwesomeIcon icon={faArrowLeft} className={teamStyle.back}/>
                     </IconButton>
                 </Grid>
@@ -56,7 +62,8 @@ export default function AddTeam() {
                             </Typography>
                         </Grid>
                         <Grid item sm={9}>
-                            <TextField required fullWidth id="fullWidth" value={name} onChange={e => setName(e.target.value)}/>
+                            <TextField required fullWidth className={teamStyle.formInput} id="fullWidth" value={name}
+                                       onChange={e => setName(e.target.value)}/>
                         </Grid>
                     </Grid>
                     <Grid item container sm={8} justifyContent="start" alignItems="center" columnSpacing={3}
@@ -67,7 +74,8 @@ export default function AddTeam() {
                             </Typography>
                         </Grid>
                         <Grid item sm={9}>
-                            <TextField required fullWidth id="fullWidth" value={email} onChange={e => setEmail(e.target.value)}/>
+                            <TextField required fullWidth className={teamStyle.formInput} id="fullWidth" value={email}
+                                       onChange={e => setEmail(e.target.value)}/>
                         </Grid>
                     </Grid>
                     <Grid item container sm={8} justifyContent="start" alignItems="center" columnSpacing={3}
@@ -78,7 +86,7 @@ export default function AddTeam() {
                             </Typography>
                         </Grid>
                         <Grid item sm={9}>
-                            <TextField required fullWidth id="fullWidth" value={experience}
+                            <TextField required fullWidth className={teamStyle.formInput} id="fullWidth" value={experience}
                                        onChange={e => setExperience(e.target.value)}/>
                         </Grid>
                     </Grid>
@@ -90,7 +98,7 @@ export default function AddTeam() {
                             </Typography>
                         </Grid>
                         <Grid item sm={9}>
-                            <TextField required fullWidth id="fullWidth" value={phoneNumber}
+                            <TextField required fullWidth className={teamStyle.formInput} id="fullWidth" value={phoneNumber}
                                        onChange={e => setPhoneNumber(e.target.value)}/>
                         </Grid>
                     </Grid>
@@ -102,7 +110,7 @@ export default function AddTeam() {
                             </Typography>
                         </Grid>
                         <Grid item sm={9}>
-                            <TextField required fullWidth id="fullWidth" value={occupation}
+                            <TextField required fullWidth className={teamStyle.formInput} id="fullWidth" value={occupation}
                                        onChange={e => setOccupation(e.target.value)}/>
                         </Grid>
                     </Grid>
@@ -116,16 +124,18 @@ export default function AddTeam() {
                         <Grid item sm={9}>
                             <FormControl fullWidth>
 
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={team}
-                                onChange={e => setTeam(e.target.value)}
-                                MenuProps={{ classes: { paper: teamStyle.teamSelect } }}
-                            >
-                                {teams.map(team => <MenuItem value={team.teamname} key={team.id} className={teamStyle.teamSelectItem}>{team.teamname}</MenuItem>)}
-                            </Select>
-                        </FormControl>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={team}
+                                    onChange={e => setTeam(e.target.value)}
+                                    MenuProps={{classes: {paper: teamStyle.teamSelect}}}
+                                    sx={darkMode.mode === "dark" ? {background: "#d5d5d5"} : {}}
+                                >
+                                    {teams.map(team => <MenuItem value={team.teamname} key={team.id}
+                                                                 className={`${darkMode.mode === 'dark' ? teamStyle.teamSelectItemDark : teamStyle.teamSelectItem}`}>{team.teamname}</MenuItem>)}
+                                </Select>
+                            </FormControl>
                         </Grid>
                     </Grid>
                     <Grid item container sm={8} justifyContent="start" alignItems="center" columnSpacing={3}
@@ -136,7 +146,7 @@ export default function AddTeam() {
                             </Typography>
                         </Grid>
                         <Grid item sm={9}>
-                            <TextField required fullWidth id="fullWidth" value={personalExperience} multiline rows={3}
+                            <TextField required fullWidth className={teamStyle.formInput} id="fullWidth" value={personalExperience} multiline rows={3}
                                        onChange={e => setPersonalExperience(e.target.value)}/>
                         </Grid>
                     </Grid>

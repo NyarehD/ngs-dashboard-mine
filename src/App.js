@@ -5,7 +5,10 @@ import Style from "./app.module.sass";
 import {Box} from "@mui/material";
 
 // For dark theme
-export const Context = createContext({mode: 'light'})
+const config = {
+    mode: 'dark'
+}
+export const Context = createContext(config)
 
 function App() {
     const [wide, setWide] = useState(false);

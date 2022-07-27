@@ -268,7 +268,7 @@ export default function Teams() {
                     </Grid>
                     <Grid item sm={3} align='right'>
                         <Button
-                            onClick={_ => navigate(` / team /${team.toLowerCase()}/addMember`, {state: {teams: teams.slice(1)}})}
+                            onClick={_ => navigate(`/team/${team.toLowerCase()}/addMember`, {state: {teams: teams.slice(1)}})}
                             variant="contained" className={teamStyle.addTeamIcon}><FontAwesomeIcon
                             size='xs' icon={faPlus}/>
 
