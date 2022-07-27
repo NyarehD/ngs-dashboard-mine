@@ -1,26 +1,34 @@
 
-
 .nav
-    position: fixed
-    left: 240px
-    width: calc(100% - 240px)
-    padding: 5px 20px
-    /* background: darken(#fff, 70) */
-    background: #c0cddb
-    transition: left .3s linear
-
-    button
-        /* color: #eee */
+  position: fixed
+  left: 240px
+  width: calc(100% - 240px)
+  padding: 5px 20px
+  /* background: darken(#fff, 70) */
+  background: #c0cddb
+  transition: left .3s linear
 
 .newNav
-    width: calc(100% - 65px)
-    left: 65px
+  width: calc(100% - 65px)
+  left: 65px
 
 .fullNav
-    width: 100%
-    left: 0 
+  width: 100%
+  left: 0
+
+.search
+  position: relative
+  border-radius: 5px !important
 
 .navBtn
-    /* color: #eee */
-    color: #333
-    
+  color: #333
+
+// For dark mode
+.darkMode
+  background-color: #2b2b2b
+
+  .navBtn
+    color: #d8d8d8
+
+  .search
+    background-color: #ffffff70

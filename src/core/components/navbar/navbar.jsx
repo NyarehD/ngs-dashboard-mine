@@ -1,4 +1,4 @@
-import { faBars, faList, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faList} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Box, IconButton, Stack } from '@mui/material'
 import { styled, alpha } from '@mui/material/styles'
@@ -51,24 +51,25 @@ const SearchItem = styled('input')(({ theme }) => ({
 
 }))
 
-const NavbarComp = ({ wide, handleWide, isMatch, slideIn }) => {
+const NavbarComp = ({ wide, handleWide, isMatch, slideIn, darkTheme}) => {
+
   return (
     <>
 
       {/* This is Navbar Session */}
 
-      <Box component='div' className='nav'>
-        <Stack component='div' direction='row' justifyContent='space-between' className={`${navbar.nav} ${wide && navbar.newNav} ${isMatch && navbar.fullNav}`}>
+      <Box component='div'>
+        <Stack component='div' direction='row' justifyContent='space-between' className={`${navbar.nav} ${wide && navbar.newNav} ${isMatch && navbar.fullNav} ${darkTheme === "dark" && navbar.darkMode}`}>
           <Stack direction='row' spacing={2} alignItems='center'>
 
             {/* Buger Bar Session */}
 
             {
               !isMatch ?
-                <IconButton onClick={handleWide}>
+                <IconButton onClick={handleWide} className={navbar.navBarIcon}>
                   <FontAwesomeIcon icon={faList} className={navbar.navBtn} />
                 </IconButton> :
-                <IconButton onClick={slideIn}>
+                <IconButton onClick={slideIn} className={navbar.navBarIcon}>
                   <FontAwesomeIcon icon={faBars} className={navbar.navBtn} />
                 </IconButton>
             }
@@ -76,7 +77,7 @@ const NavbarComp = ({ wide, handleWide, isMatch, slideIn }) => {
             {/* Search Box Session */}
 
             <SearchContainer>
-              <SearchItem placeholder='Search...' type='search' sx={{position: 'relative' , borderRadius: '5px'} }/>
+              <SearchItem placeholder='Search...' type='search' className={navbar.search}/>
             </SearchContainer>
 
           </Stack>

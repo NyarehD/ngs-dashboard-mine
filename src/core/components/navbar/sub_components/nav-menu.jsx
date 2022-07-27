@@ -1,19 +1,24 @@
-import React, { useState } from "react";
-import { Stack, Button } from "@mui/material";
+import React, {useContext } from "react";
+import {Stack} from "@mui/material";
 import UserproComp from "./user-profile";
 import Adminstration from "./adminstration";
 import Home from "./home";
+import {Context} from "../../../../App";
+import subComponentStyle from "./sub-component.module.sass";
 
 const NavMenuComp = () => {
-  return (
-    <>
-      <Stack direction="row" spacing={1} alignItems="center">
-        <Home />
-        <Adminstration />
-        <UserproComp />
-      </Stack>
-    </>
-  );
+    const [darkMode] = useContext(Context)
+
+    return (
+        <>
+            <Stack direction="row" spacing={1} alignItems="center"
+                   className={darkMode.mode === 'dark' && subComponentStyle.darkMode}>>
+                <Home/>
+                <Adminstration/>
+                <UserproComp/>
+            </Stack>
+        </>
+    );
 };
 
 export default NavMenuComp;

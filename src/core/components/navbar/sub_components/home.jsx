@@ -11,7 +11,7 @@ function Home() {
     <div>
       <div  onClick={() => navigate('/')} className={subComponentStyle.container}>
         <FontAwesomeIcon className={subComponentStyle.homeIcon} icon={faHome} />
-        <p  >Home</p>
+        <p>Home</p>
       </div>
     </div>
   );
