@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import {
-    Breadcrumbs, Button,
+    Button,
     Container, FormControl, Grid, IconButton, Select,
     Table,
     TableBody,
@@ -8,20 +8,18 @@ import {
     TableContainer,
     TableHead,
     TableRow,
-    Typography,
     Pagination,
     TextField
 } from "@mui/material";
 import teamStyle from "./team.module.sass"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
-    faAngleRight,
     faTrashCan,
     faPencil,
     faPlus,
     faTrash
 } from "@fortawesome/free-solid-svg-icons"
-import {Link, useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import MenuItem from "@mui/material/MenuItem";
 import { useEffect } from "react";
 import api from "../../../mockdatabase/database";
@@ -107,15 +105,6 @@ function CustomTable({items, all = false, teams,deleteItem }){
         </>
     )
 }
-// Table Header
-const breadcrumbs = [
-    <Link to="/" key="1" className={teamStyle.breadcrumbLink}>
-        Home
-    </Link>,
-    <Typography key="2" className={`${teamStyle.breadcrumbLink} ${teamStyle.inActive}`}>
-        Teams
-    </Typography>,
-]
 export default function Teams() {
     const [curPage, setCurPage] = useState(1)
     const [team, selectTeam] = useState('')
@@ -203,15 +192,8 @@ export default function Teams() {
     return (
         <Container maxWidth={false} className={teamStyle.teamContainer}>
             <Grid container justifyContent="space-between">
-                <Grid item sm={4}>
-                    <Breadcrumbs
-                        separator={<FontAwesomeIcon icon={faAngleRight}/>}
-                        aria-label="breadcrumb" className={teamStyle.breadcrumb}>
-                        {breadcrumbs}
-                    </Breadcrumbs>
-                </Grid>
-                <Grid item container md={5} justifyContent="space-between">
-                    <Grid item xs={8} container>
+                <Grid item container md={12} justifyContent="space-between">
+                    <Grid item xs={2} container>
                         {addingTeam ?
                         <>
                         <Grid item xs ={10}>
