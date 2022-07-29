@@ -1,11 +1,24 @@
 {
   "users": [
     {
-      "id": 6,
       "userName": "Haydan",
       "emailAddress": "work409@gmail.com",
+      "firstName": "World",
+      "mobile": "Hello",
+      "lastName": "Hello",
+      "password": "21312",
       "roles": "Admin",
-      "status": "Active"
+      "id": 2
+    },
+    {
+      "userName": "a",
+      "firstName": "a",
+      "mobile": "a",
+      "lastName": "a",
+      "emailAddress": "a",
+      "password": "a",
+      "roles": "Admin",
+      "id": 3
     },
     {
       "userName": "zawlinn.designer@gmail.com",
@@ -48,6 +61,136 @@
       "password": "WfCx05gXcSQ",
       "roles": "Manager",
       "id": 12
+    },
+    {
+      "userName": "Moon Seng",
+      "firstName": "Moon",
+      "mobile": "09259585359",
+      "lastName": "Seng",
+      "emailAddress": "moonseng.dev@gmail.com",
+      "password": "Moon Seng",
+      "roles": "Admin",
+      "status": "Active",
+      "id": 13
+    },
+    {
+      "userName": "Moon Seng",
+      "firstName": "Moon",
+      "mobile": "09259585359",
+      "lastName": "Seng",
+      "emailAddress": "moonseng.dev@gmail.com",
+      "password": "Moon Seng",
+      "roles": "Admin",
+      "status": "Active",
+      "id": 14
+    },
+    {
+      "userName": "Moon Seng",
+      "firstName": "Moon",
+      "mobile": "09259585359",
+      "lastName": "Seng",
+      "emailAddress": "moonseng.dev@gmail.com",
+      "password": "Moon Seng",
+      "roles": "Manager",
+      "status": "Active",
+      "id": 15
+    },
+    {
+      "userName": "111",
+      "firstName": "11",
+      "mobile": "1",
+      "lastName": "1",
+      "emailAddress": "1",
+      "password": "1",
+      "roles": "Admin",
+      "status": "Active",
+      "id": 5
+    },
+    {
+      "userName": "111",
+      "firstName": "11",
+      "mobile": "1",
+      "lastName": "1",
+      "emailAddress": "1",
+      "password": "1",
+      "roles": "Admin",
+      "status": "Active",
+      "id": 6
+    },
+    {
+      "userName": "111",
+      "firstName": "11",
+      "mobile": "1",
+      "lastName": "1",
+      "emailAddress": "1",
+      "password": "1",
+      "roles": "Admin",
+      "status": "Active",
+      "id": 7
+    },
+    {
+      "userName": "Hello",
+      "firstName": "World",
+      "mobile": "Hello",
+      "lastName": "Hello",
+      "emailAddress": "213123",
+      "password": "21312",
+      "roles": "Admin",
+      "id": 2
+    },
+    {
+      "userName": "a",
+      "firstName": "a",
+      "mobile": "a",
+      "lastName": "a",
+      "emailAddress": "a",
+      "password": "a",
+      "roles": "Admin",
+      "id": 3
+    },
+    {
+      "userName": "111",
+      "firstName": "11",
+      "mobile": "1",
+      "lastName": "1",
+      "emailAddress": "1",
+      "password": "1",
+      "roles": "Admin",
+      "status": "Active",
+      "id": 4
+    },
+    {
+      "userName": "111",
+      "firstName": "11",
+      "mobile": "1",
+      "lastName": "1",
+      "emailAddress": "1",
+      "password": "1",
+      "roles": "Admin",
+      "status": "Active",
+      "id": 5
+    },
+    {
+      "userName": "111",
+      "firstName": "11",
+      "mobile": "1",
+      "lastName": "1",
+      "emailAddress": "1",
+      "password": "1",
+      "roles": "Admin",
+      "status": "Active",
+      "id": 6
+    },
+    {
+      "userName": "111",
+      "firstName": "11",
+      "mobile": "1",
+      "lastName": "1",
+      "emailAddress": "1",
+      "password": "1",
+      "roles": "Admin",
+      "status": "Active",
+      "id": 7
     }
   ],
   "admin": {
@@ -59,7 +202,7 @@
   "blogs": [
     {
       "title": "Frontend Development",
-      "img": "https://tinyurl.com/yuabhvna",
+      "img": "https://tinyurl.com/3pxydama",
       "description": "desc desc desc desc desc desc desc desc desc desc desc desc desc desc",
       "date": "5/5/2001",
       "id": 1
@@ -77,6 +220,141 @@
       "description": "React React React React React React React React React React React React React React React React React React React React React React gg",
       "date": "3/9/2012",
       "id": 3
+    },
+    {
+      "title": "Frontend Development",
+      "img": "https://tinyurl.com/yuabhvna",
+      "description": "desc desc desc desc desc desc desc desc desc desc desc desc desc desc",
+      "date": "5/5/2001",
+      "id": 4
+    },
+    {
+      "title": "Html Update",
+      "img": "https://tinyurl.com/3pxydama",
+      "description": "Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post ",
+      "date": "4/8/2021",
+      "id": 5
+    },
+    {
+      "title": "React ",
+      "img": "https://tinyurl.com/yycz7cfv",
+      "description": "React React React React React React React React React React React React React React React React React React React React React React gg",
+      "date": "3/9/2012",
+      "id": 6
+    },
+    {
+      "title": "Frontend Development",
+      "img": "https://tinyurl.com/yuabhvna",
+      "description": "desc desc desc desc desc desc desc desc desc desc desc desc desc desc",
+      "date": "5/5/2001",
+      "id": 7
+    },
+    {
+      "title": "Html Update",
+      "img": "https://tinyurl.com/3pxydama",
+      "description": "Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post ",
+      "date": "4/8/2021",
+      "id": 8
+    },
+    {
+      "title": "React ",
+      "img": "https://tinyurl.com/yycz7cfv",
+      "description": "React React React React React React React React React React React React React React React React React React React React React React gg",
+      "date": "3/9/2012",
+      "id": 9
+    },
+    {
+      "title": "Frontend Development",
+      "img": "https://tinyurl.com/yuabhvna",
+      "description": "desc desc desc desc desc desc desc desc desc desc desc desc desc desc",
+      "date": "5/5/2001",
+      "id": 10
+    },
+    {
+      "title": "Html Update",
+      "img": "https://tinyurl.com/3pxydama",
+      "description": "Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post Post ",
+      "date": "4/8/2021",
+      "id": 11
+    },
+    {
+      "title": "React ",
+      "img": "https://tinyurl.com/yycz7cfv",
+      "description": "React React React React React React React React React React React React React React React React React React React React React React gg",
+      "date": "3/9/2012",
+      "id": 12
+    }
+  ],
+  "gallerys": [
+    {
+      "title": "defgh",
+      "img": "https://res-3.cloudinary.com/fieldfisher/image/upload/f_jpg,q_auto/v1/sectors/technology/tech_neoncircuitboard_857021704_medium_lc5h05",
+      "category": "Voip",
+      "date": "3/4/2015",
+      "id": 2
+    },
+    {
+      "title": "fgh",
+      "img": "https://cdn.talkesport.com/wp-content/uploads/technology-esports.jpg",
+      "category": "Technologies",
+      "date": "3/4/2018",
+      "id": 3
+    },
+    {
+      "title": "hij",
+      "img": "https://apicms.thestar.com.my/uploads/images/2022/04/06/1540822.jpg",
+      "category": "Technologies",
+      "date": "3/4/2019",
+      "id": 4
+    },
+    {
+      "title": "def",
+      "img": "https://res-3.cloudinary.com/fieldfisher/image/upload/f_jpg,q_auto/v1/sectors/technology/tech_neoncircuitboard_857021704_medium_lc5h05",
+      "category": "Voip",
+      "date": "3/4/2015",
+      "id": 6
+    },
+    {
+      "title": "fgh",
+      "img": "https://cdn.talkesport.com/wp-content/uploads/technology-esports.jpg",
+      "category": "Technologies",
+      "date": "3/4/2018",
+      "id": 7
+    },
+    {
+      "title": "hij",
+      "img": "https://apicms.thestar.com.my/uploads/images/2022/04/06/1540822.jpg",
+      "category": "Technologies",
+      "date": "3/4/2019",
+      "id": 8
+    },
+    {
+      "title": "abc",
+      "img": "https://www.investopedia.com/thmb/ooWnJKzULBikIcMgNqZdiRvHHBY=/2121x1414/filters:fill(auto,1)/GettyImages-964033964-ca3290057ccc4024b57e755423572264.jpg",
+      "category": "Voip",
+      "date": "4/8/2021",
+      "id": 9
+    },
+    {
+      "title": "def",
+      "img": "https://res-3.cloudinary.com/fieldfisher/image/upload/f_jpg,q_auto/v1/sectors/technology/tech_neoncircuitboard_857021704_medium_lc5h05",
+      "category": "Voip",
+      "date": "3/4/2015",
+      "id": 10
+    },
+    {
+      "title": "fgh",
+      "img": "https://cdn.talkesport.com/wp-content/uploads/technology-esports.jpg",
+      "category": "Technologies",
+      "date": "3/4/2018",
+      "id": 11
+    },
+    {
+      "title": "adsfsf",
+      "img": "Agent charlotte copy.png",
+      "category": "Laptop",
+      "date": "asdfa",
+      "id": 12
     }
   ],
   "developer-teams": [
@@ -277,6 +555,67 @@
       "email": "zc",
       "personalExp": "zxc",
       "id": 16
+    },
+    {
+      "image": "./logo512.png",
+      "name": "Moon Seng",
+      "occupation": "Front-end Team Leader",
+      "team": "Website",
+      "experience": "2 years",
+      "phone": "09259585359",
+      "email": "moonseng.dev@gmail.com",
+      "personalExp": "prefer to say it in interview",
+      "id": 17
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "Event1",
+      "description": "React React React React React React",
+      "date": "21/7/2022",
+      "time": "5:14 PM",
+      "src": "",
+      "location": "Yangon"
+    },
+    {
+      "id": 2
+    },
+    {
+      "title": "123",
+      "location": "Mandalay",
+      "date": "07/30/2022",
+      "time": "5:11 PM",
+      "scr": "",
+      "description": "aaaaa",
+      "id": 3
+    },
+    {
+      "title": "123123",
+      "location": "Yangon",
+      "date": "07/14/2022",
+      "time": "6:25 PM",
+      "scr": "",
+      "description": "12312312",
+      "id": 4
+    },
+    {
+      "title": "123123",
+      "location": "123123",
+      "src": "",
+      "date": "07/25/2022",
+      "time": "6:34 PM",
+      "description": "12312312",
+      "id": 5
+    },
+    {
+      "title": "123123",
+      "location": "Maesot",
+      "date": "07/22/2022",
+      "time": "06:40 AM",
+      "scr": "",
+      "description": "123123123",
+      "id": 6
     }
   ]
 }
